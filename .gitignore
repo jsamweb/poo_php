@@ -1,3 +1,4 @@
 # ignorar xampp
 xampp
+!*.php
 
