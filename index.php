@@ -1,14 +1,22 @@
 <?php
-// include
-include "greet.php";
-echo greet("sebas", "chupapimuñaño");
 
-// require
-require "greet.php";
-echo greet("sebas", "chupapimuñaño");
+class Person
+{
+    public function greet()
+    {
+        return "hola $this->name";
+    }
+}
+class User
+{
+    public $type;
+}
+class Admin extends Person  
 
-//include_once o require_once // nos permite llamar a el atributo 1 sola vez aunque este se encuentre repetido en el codigo
-require_once "greet.php";
-echo greet("sebas", "chupapimuñaño");
-include_once "greet.php";
-echo greet("sebas", "chupapimuñaño");
+{
+    public $name = "Administrador";
+}
+
+$user = new User;
+$user->type = new Admin;
+echo $user->type->greet();
